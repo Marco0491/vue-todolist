@@ -1,0 +1,29 @@
+h1#title {
+    font-family: 'Inspiration', cursive;
+    background-color: lightgreen;
+    border: 2px solid black;
+    margin-bottom: 0;
+}
+
+div#to-do-container {
+    font-family: 'Dosis', sans-serif;
+    background-color: aliceblue;
+    border: 1px solid black;
+}
+
+div#to-do-container
+ul {
+    list-style: none;
+}
+
+div#to-do-container
+ul li {
+    font-size: 1.5rem;
+    border-bottom: 1px solid lightseagreen;
+    padding: 0.5rem 0;
+}
+
+div#to-do-container
+ul li i {
+    cursor: pointer;
+}
