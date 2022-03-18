@@ -24,6 +24,11 @@ ul li {
 }
 
 div#to-do-container
+ul li span {
+    cursor: default;
+}
+
+div#to-do-container
 ul li:hover {
     background-color: lightgreen;
     border-radius: 0.5rem;
