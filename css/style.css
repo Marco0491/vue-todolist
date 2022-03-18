@@ -20,10 +20,21 @@ div#to-do-container
 ul li {
     font-size: 1.5rem;
     border-bottom: 1px solid lightseagreen;
-    padding: 0.5rem 0;
+    padding: 0.5rem;
+}
+
+div#to-do-container
+ul li:hover {
+    background-color: lightgreen;
+    border-radius: 0.5rem;
 }
 
 div#to-do-container
 ul li i {
     cursor: pointer;
+}
+
+div#to-do-container
+ul li i:hover {
+    color: red;
 }

@@ -29,30 +29,14 @@
                     <h1 id="title" class="text-capitalize p-2">to do list</h1>
                     <div id="to-do-container" class="text-start p-3">
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="elemento da aggiungere alla lista" aria-label="Recipient's username" aria-describedby="button-addon2">
-                            <button class="btn btn-success" type="button" id="button-addon2">Aggiungi</button>
+                            <input type="text" class="form-control" placeholder="elemento da aggiungere alla lista" v-model="newElement" @keydown.enter="addListElement(newElement)">
+                            <button class="btn btn-success" type="button" @click="addListElement(newElement)">Aggiungi</button>
                         </div>
-                        <h4 class="text-capitalize">la lista è vuota</h4>
-                        <ul>
-                            <li class="d-flex justify-content-between align-items-end">
-                                <span>ciao</span>
-                                <i class="fa-solid fa-xmark"></i>
-                            </li>
-                            <li class="d-flex justify-content-between align-items-end">
-                                <span>ciao</span>
-                                <i class="fa-solid fa-xmark"></i>
-                            </li>
-                            <li class="d-flex justify-content-between align-items-end">
-                                <span>ciao</span>
-                                <i class="fa-solid fa-xmark"></i>
-                            </li>
-                            <li class="d-flex justify-content-between align-items-end">
-                                <span>ciao</span>
-                                <i class="fa-solid fa-xmark"></i>
-                            </li>
-                            <li class="d-flex justify-content-between align-items-end">
-                                <span>ciao</span>
-                                <i class="fa-solid fa-xmark"></i>
+                        <h4 class="text-capitalize" v-if="thingsToDo == 0">la lista è vuota</h4>
+                        <ul v-else>
+                            <li class="text-capitalize d-flex justify-content-between align-items-end" v-for="(element, index) in thingsToDo">
+                                <span>{{element}}</span>
+                                <i class="fa-solid fa-xmark" @click="removeListElement(index)"></i>
                             </li>
                         </ul>
                     </div>
