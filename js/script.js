@@ -2,15 +2,14 @@ const app = new Vue({
     el: '#root',
     data: {
         newElementText: '',
-        done: false,
         thingsToDo: []
     },
     methods: {
-        addListElement (text, condition) {
+        addListElement(text, condition) {
             if (text.trim() != '') {
                 const newElement = {
                     text,
-                    condition
+                    done: condition,
                 };
                 this.thingsToDo.push(newElement);
                 this.newElementText = '';
@@ -19,12 +18,12 @@ const app = new Vue({
                 console.log('non hai aggiunto nessun elemento')
             }
         },
-        removeListElement (elementIndex) {
+        removeListElement(elementIndex) {
             this.thingsToDo.splice(elementIndex, 1)
             console.log('elemento rimosso');
         },
-        isDone () {
-            this.done = !this.done;
+        isDone(index) {
+            this.thingsToDo[index].done = !this.thingsToDo[index].done;
         }
     }
 });
